@@ -15,15 +15,19 @@ export class AppComponent {
 constructor(private JeopardyDataService: JeopardyService){}
 
 getQuestion(){
-    this.JeopardyDataService.getRecords("question")
+    this.JeopardyDataService.getRecords()
+    // console.log(getRecords());
       .subscribe(
         questions => {
-          this.questions = questions.data.results; 
-          console.log(this.questions);
+          this.questions = questions; 
+          // console.log(this.questions);
           // this.successMessage = "got stuff"
         },
         error =>  {this.errorMessage = <any>error; console.log(this.errorMessage)});
   }
 
+ngOnInit(){
+  console.log(this.getQuestion());
+}
 
 }

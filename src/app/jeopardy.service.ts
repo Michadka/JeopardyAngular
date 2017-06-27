@@ -15,8 +15,8 @@ export class JeopardyService {
     this.baseUrl;
    }
 
-  getRecords(endpoint: string): Observable <any>{
-    let apiUrl = `${this.baseUrl}${endpoint}`
+  getRecords(): Observable <any>{
+    let apiUrl = `${this.baseUrl}`
     return this.http.get(apiUrl)
       .map(this.extractData) //what to do on success
       .catch(this.handleError); //what to do on error
