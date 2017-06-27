@@ -6,6 +6,6 @@
   <img width="300" src="./assets/jeopardy.jpeg" />
 </div>
 <h2>This is where some shit can go!</h2>
-<div *ngFor="let question of questions">Data should be here: {{question.question}}</div>
-
+<!--<div>Data should be here: {{question.question}}</div>-->
+<app-score [question]="question"></app-score>
 

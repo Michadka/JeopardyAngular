@@ -11,9 +11,7 @@ export class JeopardyService {
 
   private baseUrl: string = 'http://jservice.io/api/random';
   
-  constructor(private http: Http, private Md5: Md5) {
-    this.baseUrl;
-   }
+  constructor(private http: Http, private Md5: Md5) {}
 
   getRecords(): Observable <any>{
     let apiUrl = `${this.baseUrl}`

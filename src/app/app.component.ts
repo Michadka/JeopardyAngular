@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { JeopardyService } from './jeopardy.service';
 
@@ -8,9 +8,11 @@ import { JeopardyService } from './jeopardy.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   title = 'Jeopardy with Angular';
-  questions: any;
+  question: object = {};
   errorMessage: string;
+
 
 constructor(private JeopardyDataService: JeopardyService){}
 
@@ -19,7 +21,7 @@ getQuestion(){
     // console.log(getRecords());
       .subscribe(
         questions => {
-          this.questions = questions; 
+          this.question = questions[0]; 
           // console.log(this.questions);
           // this.successMessage = "got stuff"
         },
@@ -27,7 +29,7 @@ getQuestion(){
   }
 
 ngOnInit(){
-  console.log(this.getQuestion());
+  this.getQuestion();
 }
 
 }
