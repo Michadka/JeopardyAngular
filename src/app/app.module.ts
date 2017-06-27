@@ -1,16 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { Md5 } from 'ts-md5/dist/md5';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { JeopardyService } from './jeopardy.service';
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    JeopardyService,
+    Md5
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
