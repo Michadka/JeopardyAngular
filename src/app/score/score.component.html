@@ -1,21 +1,22 @@
   <div id="content">
-    <p>Category: <span id="category">{{question.category?.title}}</span></p>
+    <p><span id="title">Category:</span> <span id="category">{{question.category?.title}}</span></p>
 
 <!-- On page load, display question here -->
-    <p>Question: <span id="question">{{question.question}}</span></p>
+    <p><span id="title">Question:</span> <span id="question">{{question.question}}</span></p>
 
 <!-- Have textbox for answer here -->
 
 <form>
-  <input id="answer-value" type="text" name="search" placeholder="Who is...">
+  <input id="answer-value" [(ngModel)]="answer" type="text" name="search" placeholder="Who is...">
 </form>
 
 <!-- Button for answer submit here -->
-<button id="submit-button" type="button" class="btn btn-primary btn-lg">Submit</button>
+<button (click)="submit()" id="submit-button" type="button" class="btn btn-primary btn-lg">Submit</button>
 
 
     <!-- <button id="submit-button">Submit</button> -->
 <!-- Score tally here.  Start at zero -->
-    <p>Answer Value: <span>{{question.value}}</span></p>
-    <p>Answer: {{question.answer}}</p>
+    <p><span id="title">Point Value:</span> <span>{{question.value}}</span></p>
+    <p><span id="title">Answer:</span> {{question.answer}}</p>
+    <p><span id="title">Your total score: </span><span id="score">{{yourScore}}</span></p>
   </div>

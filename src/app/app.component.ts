@@ -9,9 +9,10 @@ import { JeopardyService } from './jeopardy.service';
 })
 export class AppComponent {
   
-  title = 'Jeopardy with Angular';
+  title = 'with Angular';
   question: object = {};
   errorMessage: string;
+  //  submitButton: string = $('#submit-button');
 
 
 constructor(private JeopardyDataService: JeopardyService){}
@@ -26,10 +27,19 @@ getQuestion(){
           // this.successMessage = "got stuff"
         },
         error =>  {this.errorMessage = <any>error; console.log(this.errorMessage)});
-  }
 
+}
+// console.log("test");
 ngOnInit(){
   this.getQuestion();
 }
+
+
+
+  // submitButton = $('#submit-button');
+
+
+
+
 
 }

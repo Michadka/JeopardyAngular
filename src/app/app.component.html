@@ -1,11 +1,9 @@
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
+<div id="hero">
   <h1>
-    Welcome to {{title}}!!
+    Welcome to <img width="500" src="./assets/jeopardy.jpeg" />{{title}}!!
   </h1>
-  <img width="300" src="./assets/jeopardy.jpeg" />
+  <!--<img width="500" src="./assets/jeopardy.jpeg" />-->
 </div>
-<h2>This is where some shit can go!</h2>
 <!--<div>Data should be here: {{question.question}}</div>-->
-<app-score [question]="question"></app-score>
-
+<app-score (scored)="getQuestion()" [question]="question"></app-score>
